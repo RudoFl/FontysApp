@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42A58E3913F2A290002D8DD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3813F2A290002D8DD8 /* UIKit.framework */; };
+		42A58E3B13F2A290002D8DD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3A13F2A290002D8DD8 /* Foundation.framework */; };
+		42A58E3D13F2A290002D8DD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3C13F2A290002D8DD8 /* CoreGraphics.framework */; };
+		42A58E4313F2A290002D8DD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E4113F2A290002D8DD8 /* InfoPlist.strings */; };
+		42A58E4513F2A290002D8DD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4413F2A290002D8DD8 /* main.m */; };
+		42A58E4913F2A290002D8DD8 /* FontysAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */; };
+		42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E4A13F2A290002D8DD8 /* MainWindow.xib */; };
+		42A58E4F13F2A290002D8DD8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4E13F2A290002D8DD8 /* FirstViewController.m */; };
+		42A58E5213F2A290002D8DD8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E5113F2A290002D8DD8 /* SecondViewController.m */; };
+		42A58E5513F2A290002D8DD8 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E5313F2A290002D8DD8 /* FirstView.xib */; };
+		42A58E5813F2A290002D8DD8 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E5613F2A290002D8DD8 /* SecondView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42A58E3413F2A290002D8DD8 /* FontysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42A58E3813F2A290002D8DD8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		42A58E3A13F2A290002D8DD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		42A58E3C13F2A290002D8DD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		42A58E4013F2A290002D8DD8 /* FontysApp-Info.plist */ = {isa = PBXFileReference; path = "FontysApp-Info.plist"; sourceTree = "<group>"; };
+		42A58E4213F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42A58E4413F2A290002D8DD8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42A58E4613F2A290002D8DD8 /* FontysApp-Prefix.pch */ = {isa = PBXFileReference; path = "FontysApp-Prefix.pch"; sourceTree = "<group>"; };
+		42A58E4713F2A290002D8DD8 /* FontysAppAppDelegate.h */ = {isa = PBXFileReference; path = FontysAppAppDelegate.h; sourceTree = "<group>"; };
+		42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontysAppAppDelegate.m; sourceTree = "<group>"; };
+		42A58E4B13F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		42A58E4D13F2A290002D8DD8 /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		42A58E4E13F2A290002D8DD8 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		42A58E5013F2A290002D8DD8 /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		42A58E5113F2A290002D8DD8 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		42A58E5413F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
+		42A58E5713F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42A58E3113F2A290002D8DD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A58E3913F2A290002D8DD8 /* UIKit.framework in Frameworks */,
+				42A58E3B13F2A290002D8DD8 /* Foundation.framework in Frameworks */,
+				42A58E3D13F2A290002D8DD8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42A58E2913F2A290002D8DD8 = {
+			isa = PBXGroup;
+			children = (
+				42A58E3E13F2A290002D8DD8 /* FontysApp */,
+				42A58E3713F2A290002D8DD8 /* Frameworks */,
+				42A58E3513F2A290002D8DD8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42A58E3513F2A290002D8DD8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42A58E3413F2A290002D8DD8 /* FontysApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42A58E3713F2A290002D8DD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42A58E3813F2A290002D8DD8 /* UIKit.framework */,
+				42A58E3A13F2A290002D8DD8 /* Foundation.framework */,
+				42A58E3C13F2A290002D8DD8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42A58E3E13F2A290002D8DD8 /* FontysApp */ = {
+			isa = PBXGroup;
+			children = (
+				42A58E4713F2A290002D8DD8 /* FontysAppAppDelegate.h */,
+				42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */,
+				42A58E4A13F2A290002D8DD8 /* MainWindow.xib */,
+				42A58E4D13F2A290002D8DD8 /* FirstViewController.h */,
+				42A58E4E13F2A290002D8DD8 /* FirstViewController.m */,
+				42A58E5013F2A290002D8DD8 /* SecondViewController.h */,
+				42A58E5113F2A290002D8DD8 /* SecondViewController.m */,
+				42A58E5313F2A290002D8DD8 /* FirstView.xib */,
+				42A58E5613F2A290002D8DD8 /* SecondView.xib */,
+				42A58E3F13F2A290002D8DD8 /* Supporting Files */,
+			);
+			path = FontysApp;
+			sourceTree = "<group>";
+		};
+		42A58E3F13F2A290002D8DD8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42A58E4013F2A290002D8DD8 /* FontysApp-Info.plist */,
+				42A58E4113F2A290002D8DD8 /* InfoPlist.strings */,
+				42A58E4413F2A290002D8DD8 /* main.m */,
+				42A58E4613F2A290002D8DD8 /* FontysApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42A58E3313F2A290002D8DD8 /* FontysApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42A58E5B13F2A290002D8DD8 /* Build configuration list for PBXNativeTarget "FontysApp" */;
+			buildPhases = (
+				42A58E3013F2A290002D8DD8 /* Sources */,
+				42A58E3113F2A290002D8DD8 /* Frameworks */,
+				42A58E3213F2A290002D8DD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FontysApp;
+			productName = FontysApp;
+			productReference = 42A58E3413F2A290002D8DD8 /* FontysApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42A58E2B13F2A290002D8DD8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Fontys Hogeschool ICT";
+			};
+			buildConfigurationList = 42A58E2E13F2A290002D8DD8 /* Build configuration list for PBXProject "FontysApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 42A58E2913F2A290002D8DD8;
+			productRefGroup = 42A58E3513F2A290002D8DD8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42A58E3313F2A290002D8DD8 /* FontysApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42A58E3213F2A290002D8DD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A58E4313F2A290002D8DD8 /* InfoPlist.strings in Resources */,
+				42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */,
+				42A58E5513F2A290002D8DD8 /* FirstView.xib in Resources */,
+				42A58E5813F2A290002D8DD8 /* SecondView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42A58E3013F2A290002D8DD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42A58E4513F2A290002D8DD8 /* main.m in Sources */,
+				42A58E4913F2A290002D8DD8 /* FontysAppAppDelegate.m in Sources */,
+				42A58E4F13F2A290002D8DD8 /* FirstViewController.m in Sources */,
+				42A58E5213F2A290002D8DD8 /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		42A58E4113F2A290002D8DD8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42A58E4213F2A290002D8DD8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		42A58E4A13F2A290002D8DD8 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42A58E4B13F2A290002D8DD8 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		42A58E5313F2A290002D8DD8 /* FirstView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42A58E5413F2A290002D8DD8 /* en */,
+			);
+			name = FirstView.xib;
+			sourceTree = "<group>";
+		};
+		42A58E5613F2A290002D8DD8 /* SecondView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42A58E5713F2A290002D8DD8 /* en */,
+			);
+			name = SecondView.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42A58E5913F2A290002D8DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		42A58E5A13F2A290002D8DD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42A58E5C13F2A290002D8DD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FontysApp/FontysApp-Prefix.pch";
+				INFOPLIST_FILE = "FontysApp/FontysApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		42A58E5D13F2A290002D8DD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FontysApp/FontysApp-Prefix.pch";
+				INFOPLIST_FILE = "FontysApp/FontysApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42A58E2E13F2A290002D8DD8 /* Build configuration list for PBXProject "FontysApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A58E5913F2A290002D8DD8 /* Debug */,
+				42A58E5A13F2A290002D8DD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42A58E5B13F2A290002D8DD8 /* Build configuration list for PBXNativeTarget "FontysApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42A58E5C13F2A290002D8DD8 /* Debug */,
+				42A58E5D13F2A290002D8DD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42A58E2B13F2A290002D8DD8 /* Project object */;
+}
