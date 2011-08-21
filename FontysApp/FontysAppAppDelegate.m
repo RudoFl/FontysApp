@@ -1,23 +1,13 @@
-//
-//  FontysAppAppDelegate.m
-//  FontysApp
-//
-//  Created by Ruud Puts on 8/10/11.
-//  Copyright 2011 Fontys Hogeschool ICT. All rights reserved.
-//
-
 #import "FontysAppAppDelegate.h"
 
 @implementation FontysAppAppDelegate
 
 @synthesize window = _window;
-@synthesize tabBarController = _tabBarController;
+@synthesize viewController = _viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    // Add the tab bar controller's current view as a subview of the window
-    self.window.rootViewController = self.tabBarController;
+    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -64,7 +54,7 @@
 - (void)dealloc
 {
     [_window release];
-    [_tabBarController release];
+    [_viewController release];
     [super dealloc];
 }
 

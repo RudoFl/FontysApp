@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421FDE0F14016D3700571393 /* LoginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 421FDE0D14016D3700571393 /* LoginWindow.m */; };
+		421FDE1014016D3700571393 /* LoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421FDE0E14016D3700571393 /* LoginWindow.xib */; };
 		42A58E3913F2A290002D8DD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3813F2A290002D8DD8 /* UIKit.framework */; };
 		42A58E3B13F2A290002D8DD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3A13F2A290002D8DD8 /* Foundation.framework */; };
 		42A58E3D13F2A290002D8DD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3C13F2A290002D8DD8 /* CoreGraphics.framework */; };
@@ -14,13 +16,12 @@
 		42A58E4513F2A290002D8DD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4413F2A290002D8DD8 /* main.m */; };
 		42A58E4913F2A290002D8DD8 /* FontysAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */; };
 		42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E4A13F2A290002D8DD8 /* MainWindow.xib */; };
-		42A58E4F13F2A290002D8DD8 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4E13F2A290002D8DD8 /* FirstViewController.m */; };
-		42A58E5213F2A290002D8DD8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E5113F2A290002D8DD8 /* SecondViewController.m */; };
-		42A58E5513F2A290002D8DD8 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E5313F2A290002D8DD8 /* FirstView.xib */; };
-		42A58E5813F2A290002D8DD8 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E5613F2A290002D8DD8 /* SecondView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421FDE0C14016D3700571393 /* LoginWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginWindow.h; path = ../LoginWindow.h; sourceTree = "<group>"; };
+		421FDE0D14016D3700571393 /* LoginWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginWindow.m; path = ../LoginWindow.m; sourceTree = "<group>"; };
+		421FDE0E14016D3700571393 /* LoginWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginWindow.xib; path = ../LoginWindow.xib; sourceTree = "<group>"; };
 		42A58E3413F2A290002D8DD8 /* FontysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A58E3813F2A290002D8DD8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42A58E3A13F2A290002D8DD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,12 +33,6 @@
 		42A58E4713F2A290002D8DD8 /* FontysAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontysAppAppDelegate.h; sourceTree = "<group>"; };
 		42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontysAppAppDelegate.m; sourceTree = "<group>"; };
 		42A58E4B13F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		42A58E4D13F2A290002D8DD8 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		42A58E4E13F2A290002D8DD8 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		42A58E5013F2A290002D8DD8 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		42A58E5113F2A290002D8DD8 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		42A58E5413F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
-		42A58E5713F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +82,9 @@
 				42A58E4713F2A290002D8DD8 /* FontysAppAppDelegate.h */,
 				42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */,
 				42A58E4A13F2A290002D8DD8 /* MainWindow.xib */,
-				42A58E4D13F2A290002D8DD8 /* FirstViewController.h */,
-				42A58E4E13F2A290002D8DD8 /* FirstViewController.m */,
-				42A58E5013F2A290002D8DD8 /* SecondViewController.h */,
-				42A58E5113F2A290002D8DD8 /* SecondViewController.m */,
-				42A58E5313F2A290002D8DD8 /* FirstView.xib */,
-				42A58E5613F2A290002D8DD8 /* SecondView.xib */,
+				421FDE0C14016D3700571393 /* LoginWindow.h */,
+				421FDE0D14016D3700571393 /* LoginWindow.m */,
+				421FDE0E14016D3700571393 /* LoginWindow.xib */,
 				42A58E3F13F2A290002D8DD8 /* Supporting Files */,
 			);
 			path = FontysApp;
@@ -161,8 +153,7 @@
 			files = (
 				42A58E4313F2A290002D8DD8 /* InfoPlist.strings in Resources */,
 				42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */,
-				42A58E5513F2A290002D8DD8 /* FirstView.xib in Resources */,
-				42A58E5813F2A290002D8DD8 /* SecondView.xib in Resources */,
+				421FDE1014016D3700571393 /* LoginWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +166,7 @@
 			files = (
 				42A58E4513F2A290002D8DD8 /* main.m in Sources */,
 				42A58E4913F2A290002D8DD8 /* FontysAppAppDelegate.m in Sources */,
-				42A58E4F13F2A290002D8DD8 /* FirstViewController.m in Sources */,
-				42A58E5213F2A290002D8DD8 /* SecondViewController.m in Sources */,
+				421FDE0F14016D3700571393 /* LoginWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,22 +187,6 @@
 				42A58E4B13F2A290002D8DD8 /* en */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		42A58E5313F2A290002D8DD8 /* FirstView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42A58E5413F2A290002D8DD8 /* en */,
-			);
-			name = FirstView.xib;
-			sourceTree = "<group>";
-		};
-		42A58E5613F2A290002D8DD8 /* SecondView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42A58E5713F2A290002D8DD8 /* en */,
-			);
-			name = SecondView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -302,6 +276,7 @@
 				42A58E5D13F2A290002D8DD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
