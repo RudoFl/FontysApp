@@ -2,11 +2,13 @@
 
 @implementation LoginWindow
 
-@synthesize accountTypes, accountInput, accountPicker, usernameInput, passwordInput, loginButton, url;
+@synthesize accountTypes, accountInput, accountPicker, usernameInput, passwordInput, loginButton, url, app, currentPeriod;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.app = (FontysAppAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     self.accountTypes = [[NSArray alloc] initWithObjects:@"Student", @"Alumnus", @"Employee", @"Relation", nil];
     
@@ -17,7 +19,7 @@
     
     authSucces = YES;
     
-    url = @"https://dpf-hi.fontys.nl/ReportServer?%2fStudentResulaat%2fStudentResultaat&rs%3aFormat=XML";
+    self.url = @"https://dpf-hi.fontys.nl/ReportServer?%2fStudentResulaat%2fStudentResultaat&rs%3aFormat=XML";
 }
 
 #pragma mark - Table view data source
@@ -153,9 +155,9 @@
     if(authSucces)
     {
         NSLog(@"Login Succesfull, getting XML feed");
-        NSString *XMLData = [[NSString alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
-        NSLog(XMLData);
-        [XMLData release];
+        [self parseXML];
+        [app.report.student discribe];
+        NSLog([NSString stringWithFormat:@"%d", [app.report.periods count]]);
     }
 }
 
@@ -168,6 +170,87 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 }
 
+- (void)parseXML
+{
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
+    [parser setDelegate:self];
+    [parser setShouldProcessNamespaces:YES];
+    [parser setShouldReportNamespacePrefixes:YES];
+    [parser setShouldResolveExternalEntities:YES];
+    [parser parse];
+    [parser release];
+}
+
+- (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    if([elementName isEqualToString:@"Report"])
+    {
+        self.app.report.student.student = [attributeDict objectForKey:@"studNaam"];
+        self.app.report.student.study = [attributeDict objectForKey:@"studieNaam"];
+        self.app.report.student.pcn = [[attributeDict objectForKey:@"studPcn"] intValue];
+        self.app.report.student.studentnumber = [[attributeDict objectForKey:@"studNr"] intValue];
+        self.app.report.student.slb1 = [attributeDict objectForKey:@"slb1Naam"];
+        self.app.report.student.slb2 = [attributeDict objectForKey:@"slb2Naam"];
+        self.app.report.student.asses11 = [attributeDict objectForKey:@"asse1PNaam"];
+        self.app.report.student.asses12 = [attributeDict objectForKey:@"asse2PNaam"];
+        self.app.report.student.asses21 = [attributeDict objectForKey:@"asse1PNaam2"];
+        self.app.report.student.asses22 = [attributeDict objectForKey:@"asse2PNaam2"];
+        self.app.report.student.asses31 = [attributeDict objectForKey:@"asse1PNaam3"];
+        self.app.report.student.asses32 = [attributeDict objectForKey:@"asse2PNaam3"];
+    }
+    
+    if([elementName isEqualToString:@"table1_periodeNaam"])
+    {
+        [self describeDictionary:attributeDict];
+        Period *period = [[Period alloc] init];
+        period.description = [attributeDict objectForKey:@"Textbox25"];
+        currentPeriod = period;
+    }
+    
+    if([elementName isEqualToString:@"Detail"])
+    {
+        Result *result = [[Result alloc] init];
+        result.course = [attributeDict objectForKey:@"vakNaam"];
+        result.description = [attributeDict objectForKey:@"beschrijving"];
+        result.SBU = [[attributeDict objectForKey:@"SBU"] intValue];
+        result.comment = [attributeDict objectForKey:@"Opmerking"];
+        result.A1 = [attributeDict objectForKey:@"A1"];
+        result.A2 = [attributeDict objectForKey:@"A2"];
+        result.A3 = [attributeDict objectForKey:@"A3"];
+        result.B1 = [attributeDict objectForKey:@"B1"];
+        result.B2 = [attributeDict objectForKey:@"B2"];
+        result.B3 = [attributeDict objectForKey:@"B3"];
+        result.B4 = [attributeDict objectForKey:@"B4"];
+        result.B5 = [attributeDict objectForKey:@"B5"];
+        [currentPeriod addResult:result];
+        [result release];
+    }
+}
+
+- (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    if([elementName isEqualToString:@"table1_periodeNaam"])
+    {
+        [self.app.report addPeriod:currentPeriod];
+    }
+}
+
+- (void)describeDictionary:(NSDictionary *)dict
+{ 
+    NSArray *keys;
+    int i, count;
+    id key, value;
+    
+    keys = [dict allKeys];
+    count = [keys count];
+    for (i = 0; i < count; i++)
+    {
+        key = [keys objectAtIndex: i];
+        value = [dict objectForKey: key];
+        NSLog (@"Key: %@ for value: %@", key, value);
+    }
+}
+
 - (void)dealloc
 {
     [accountTypes release];
@@ -177,6 +260,8 @@
     [passwordInput release];
     [loginButton release];
     [url release];
+    [app release];
+    [currentPeriod release];
     [super dealloc];
 }
 

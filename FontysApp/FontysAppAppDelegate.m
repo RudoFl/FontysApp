@@ -4,11 +4,13 @@
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize report;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    report = [[Student alloc] init];
     return YES;
 }
 
@@ -55,6 +57,7 @@
 {
     [_window release];
     [_viewController release];
+    [report release];
     [super dealloc];
 }
 

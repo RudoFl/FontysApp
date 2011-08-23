@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4214A3F8140392A40030E066 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A3F7140392A40030E066 /* Student.m */; };
+		4214A3FC140392C10030E066 /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A3FB140392C10030E066 /* Period.m */; };
+		4214A3FF140392CB0030E066 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A3FE140392CB0030E066 /* Result.m */; };
+		4214A4081403B16A0030E066 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A4071403B16A0030E066 /* test.m */; };
 		421FDE0F14016D3700571393 /* LoginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 421FDE0D14016D3700571393 /* LoginWindow.m */; };
 		421FDE1014016D3700571393 /* LoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421FDE0E14016D3700571393 /* LoginWindow.xib */; };
+		428D01C41403DC400025D2B2 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D01C31403DC400025D2B2 /* Report.m */; };
+		4290363A14019ECD00ACB58D /* ResultsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4290363814019ECD00ACB58D /* ResultsView.m */; };
+		4290363B14019ECD00ACB58D /* ResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4290363914019ECD00ACB58D /* ResultsView.xib */; };
+		4290363F1401A0DD00ACB58D /* TabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4290363D1401A0DD00ACB58D /* TabbarController.m */; };
+		429036401401A0DD00ACB58D /* TabbarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4290363E1401A0DD00ACB58D /* TabbarController.xib */; };
 		42A58E3913F2A290002D8DD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3813F2A290002D8DD8 /* UIKit.framework */; };
 		42A58E3B13F2A290002D8DD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3A13F2A290002D8DD8 /* Foundation.framework */; };
 		42A58E3D13F2A290002D8DD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3C13F2A290002D8DD8 /* CoreGraphics.framework */; };
@@ -19,9 +28,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4214A3F6140392A30030E066 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		4214A3F7140392A40030E066 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		4214A3FA140392C10030E066 /* Period.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Period.h; sourceTree = "<group>"; };
+		4214A3FB140392C10030E066 /* Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Period.m; sourceTree = "<group>"; };
+		4214A3FD140392CB0030E066 /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		4214A3FE140392CB0030E066 /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
+		4214A4061403B16A0030E066 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		4214A4071403B16A0030E066 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		421FDE0C14016D3700571393 /* LoginWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginWindow.h; path = ../LoginWindow.h; sourceTree = "<group>"; };
 		421FDE0D14016D3700571393 /* LoginWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginWindow.m; path = ../LoginWindow.m; sourceTree = "<group>"; };
 		421FDE0E14016D3700571393 /* LoginWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginWindow.xib; path = ../LoginWindow.xib; sourceTree = "<group>"; };
+		428D01C21403DC400025D2B2 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		428D01C31403DC400025D2B2 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		4290363714019ECD00ACB58D /* ResultsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultsView.h; path = ../ResultsView.h; sourceTree = "<group>"; };
+		4290363814019ECD00ACB58D /* ResultsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultsView.m; path = ../ResultsView.m; sourceTree = "<group>"; };
+		4290363914019ECD00ACB58D /* ResultsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsView.xib; path = ../ResultsView.xib; sourceTree = "<group>"; };
+		4290363C1401A0DD00ACB58D /* TabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabbarController.h; sourceTree = "<group>"; };
+		4290363D1401A0DD00ACB58D /* TabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabbarController.m; sourceTree = "<group>"; };
+		4290363E1401A0DD00ACB58D /* TabbarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabbarController.xib; sourceTree = "<group>"; };
 		42A58E3413F2A290002D8DD8 /* FontysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A58E3813F2A290002D8DD8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42A58E3A13F2A290002D8DD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,7 +109,23 @@
 				42A58E4A13F2A290002D8DD8 /* MainWindow.xib */,
 				421FDE0C14016D3700571393 /* LoginWindow.h */,
 				421FDE0D14016D3700571393 /* LoginWindow.m */,
+				428D01C21403DC400025D2B2 /* Report.h */,
+				428D01C31403DC400025D2B2 /* Report.m */,
 				421FDE0E14016D3700571393 /* LoginWindow.xib */,
+				4290363C1401A0DD00ACB58D /* TabbarController.h */,
+				4290363D1401A0DD00ACB58D /* TabbarController.m */,
+				4290363E1401A0DD00ACB58D /* TabbarController.xib */,
+				4290363714019ECD00ACB58D /* ResultsView.h */,
+				4290363814019ECD00ACB58D /* ResultsView.m */,
+				4290363914019ECD00ACB58D /* ResultsView.xib */,
+				4214A3F6140392A30030E066 /* Student.h */,
+				4214A3F7140392A40030E066 /* Student.m */,
+				4214A4061403B16A0030E066 /* test.h */,
+				4214A4071403B16A0030E066 /* test.m */,
+				4214A3FA140392C10030E066 /* Period.h */,
+				4214A3FB140392C10030E066 /* Period.m */,
+				4214A3FD140392CB0030E066 /* Result.h */,
+				4214A3FE140392CB0030E066 /* Result.m */,
 				42A58E3F13F2A290002D8DD8 /* Supporting Files */,
 			);
 			path = FontysApp;
@@ -154,6 +195,8 @@
 				42A58E4313F2A290002D8DD8 /* InfoPlist.strings in Resources */,
 				42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */,
 				421FDE1014016D3700571393 /* LoginWindow.xib in Resources */,
+				4290363B14019ECD00ACB58D /* ResultsView.xib in Resources */,
+				429036401401A0DD00ACB58D /* TabbarController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +210,13 @@
 				42A58E4513F2A290002D8DD8 /* main.m in Sources */,
 				42A58E4913F2A290002D8DD8 /* FontysAppAppDelegate.m in Sources */,
 				421FDE0F14016D3700571393 /* LoginWindow.m in Sources */,
+				4290363A14019ECD00ACB58D /* ResultsView.m in Sources */,
+				4290363F1401A0DD00ACB58D /* TabbarController.m in Sources */,
+				4214A3F8140392A40030E066 /* Student.m in Sources */,
+				4214A3FC140392C10030E066 /* Period.m in Sources */,
+				4214A3FF140392CB0030E066 /* Result.m in Sources */,
+				4214A4081403B16A0030E066 /* test.m in Sources */,
+				428D01C41403DC400025D2B2 /* Report.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
