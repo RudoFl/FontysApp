@@ -168,6 +168,7 @@
 		42A58E2B13F2A290002D8DD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Fontys Hogeschool ICT";
 			};
 			buildConfigurationList = 42A58E2E13F2A290002D8DD8 /* Build configuration list for PBXProject "FontysApp" */;
