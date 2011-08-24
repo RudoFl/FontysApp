@@ -2,12 +2,13 @@
 
 @implementation Result
 
-@synthesize course, description, comment, A1, A2, A3, B1, B2, B3, B4, B5, SBU;
+@synthesize course, description, result, comment, A1, A2, A3, B1, B2, B3, B4, B5, SBU;
 
 - (void) dealloc
 {
     [course release];
     [description release];
+    [result release];
     [comment release];
     [A1 release];
     [A2 release];

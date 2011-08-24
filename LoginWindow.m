@@ -1,6 +1,6 @@
 #import "LoginWindow.h"
 #import "Result.h"
-#import "TabbarController.h"
+#import "ResultsView.h"
 
 @implementation LoginWindow
 
@@ -53,7 +53,8 @@
         [self.usernameInput setPlaceholder:@"PCN-Number"];
         [self.usernameInput setKeyboardType:UIKeyboardTypeNumberPad];
         [self.usernameInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-                
+        
+        
         [cell addSubview:self.usernameInput];
     }
     else if([indexPath row] == 1)
@@ -156,12 +157,9 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     if(authSucces)
     {
-        NSLog(@"Login Succesfull, getting XML feed");
         [self parseXML];
-        
-        TabbarController *tabbar = [[TabbarController alloc] initWithNibName:@"TabbarController" bundle:nil];
-        
-        [self presentModalViewController:tabbar animated:YES];
+        ResultsView *resultsView = [[ResultsView alloc] initWithNibName:@"ResultsView" bundle:nil];
+        [self presentModalViewController:resultsView animated:NO];
     }
 }
 
@@ -219,6 +217,7 @@
         Result *result = [[Result alloc] init];
         result.course = [attributeDict objectForKey:@"vakNaam"];
         result.description = [attributeDict objectForKey:@"beschrijving"];
+        result.result = [attributeDict objectForKey:@"resultaat"];
         result.SBU = [[attributeDict objectForKey:@"SBU"] intValue];
         result.comment = [attributeDict objectForKey:@"Opmerking"];
         result.A1 = [attributeDict objectForKey:@"A1"];
