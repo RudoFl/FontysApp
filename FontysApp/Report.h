@@ -8,8 +8,6 @@
     NSArray *periods;
 }
 
-- (void)addPeriod:(Period *) period;
-
 @property (nonatomic, retain) Student *student;
 @property (nonatomic, retain) NSArray *periods;
 

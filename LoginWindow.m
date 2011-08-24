@@ -1,8 +1,9 @@
 #import "LoginWindow.h"
+#import "Result.h"
 
 @implementation LoginWindow
 
-@synthesize accountTypes, accountInput, accountPicker, usernameInput, passwordInput, loginButton, url, app, currentPeriod;
+@synthesize accountTypes, accountInput, accountPicker, usernameInput, passwordInput, loginButton, url, app, results;
 
 - (void)viewDidLoad
 {
@@ -50,7 +51,6 @@
         [self.usernameInput setKeyboardType:UIKeyboardTypeNumberPad];
         [self.usernameInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         
-        [self.usernameInput setText:@"221882"];
         
         [cell addSubview:self.usernameInput];
     }
@@ -61,7 +61,6 @@
         [self.passwordInput setPlaceholder:@"Password"];
         [self.passwordInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         
-        [self.passwordInput setText:@"hp-Rudi_4965"];
         
         [cell addSubview:self.passwordInput];
     }
@@ -156,8 +155,6 @@
     {
         NSLog(@"Login Succesfull, getting XML feed");
         [self parseXML];
-        [app.report.student discribe];
-        NSLog([NSString stringWithFormat:@"%d", [app.report.periods count]]);
     }
 }
 
@@ -184,19 +181,22 @@
 - (void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     if([elementName isEqualToString:@"Report"])
-    {
-        self.app.report.student.student = [attributeDict objectForKey:@"studNaam"];
-        self.app.report.student.study = [attributeDict objectForKey:@"studieNaam"];
-        self.app.report.student.pcn = [[attributeDict objectForKey:@"studPcn"] intValue];
-        self.app.report.student.studentnumber = [[attributeDict objectForKey:@"studNr"] intValue];
-        self.app.report.student.slb1 = [attributeDict objectForKey:@"slb1Naam"];
-        self.app.report.student.slb2 = [attributeDict objectForKey:@"slb2Naam"];
-        self.app.report.student.asses11 = [attributeDict objectForKey:@"asse1PNaam"];
-        self.app.report.student.asses12 = [attributeDict objectForKey:@"asse2PNaam"];
-        self.app.report.student.asses21 = [attributeDict objectForKey:@"asse1PNaam2"];
-        self.app.report.student.asses22 = [attributeDict objectForKey:@"asse2PNaam2"];
-        self.app.report.student.asses31 = [attributeDict objectForKey:@"asse1PNaam3"];
-        self.app.report.student.asses32 = [attributeDict objectForKey:@"asse2PNaam3"];
+    {        
+        Student *student = [[Student alloc] init];
+        student.student = [attributeDict objectForKey:@"studNaam"];
+        student.study = [attributeDict objectForKey:@"studieNaam"];
+        student.pcn = [[attributeDict objectForKey:@"studPcn"] intValue];
+        student.studentnumber = [[attributeDict objectForKey:@"studNr"] intValue];
+        student.slb1 = [attributeDict objectForKey:@"slb1Naam"];
+        student.slb2 = [attributeDict objectForKey:@"slb2Naam"];
+        student.asses11 = [attributeDict objectForKey:@"asse1PNaam"];
+        student.asses12 = [attributeDict objectForKey:@"asse2PNaam"];
+        student.asses21 = [attributeDict objectForKey:@"asse1PNaam2"];
+        student.asses22 = [attributeDict objectForKey:@"asse2PNaam2"];
+        student.asses31 = [attributeDict objectForKey:@"asse1PNaam3"];
+        student.asses32 = [attributeDict objectForKey:@"asse2PNaam3"];        
+        app.report.student = student;
+        [student release];
     }
     
     if([elementName isEqualToString:@"table1_periodeNaam"])
@@ -222,17 +222,13 @@
         result.B3 = [attributeDict objectForKey:@"B3"];
         result.B4 = [attributeDict objectForKey:@"B4"];
         result.B5 = [attributeDict objectForKey:@"B5"];
-        [currentPeriod addResult:result];
+        
         [result release];
     }
 }
 
 - (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    if([elementName isEqualToString:@"table1_periodeNaam"])
-    {
-        [self.app.report addPeriod:currentPeriod];
-    }
 }
 
 - (void)describeDictionary:(NSDictionary *)dict
@@ -254,6 +250,7 @@
 - (void)dealloc
 {
     [accountTypes release];
+    [results release];
     [accountInput release];
     [accountPicker release];
     [usernameInput release];
@@ -261,7 +258,6 @@
     [loginButton release];
     [url release];
     [app release];
-    [currentPeriod release];
     [super dealloc];
 }
 

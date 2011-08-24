@@ -14,14 +14,6 @@
     return self;
 }
 
-- (void) addResult:(Result *)result;
-{
-    NSMutableArray *tempresults = [[NSMutableArray alloc] initWithArray:self.results];
-    [tempresults addObject:result];
-    self.results = [tempresults copy];
-    [tempresults release];
-}
-
 - (void) dealloc
 {
     [description release];
