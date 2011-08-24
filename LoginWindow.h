@@ -4,7 +4,7 @@
 @interface LoginWindow : UIViewController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource, NSXMLParserDelegate>
 {
     NSArray *accountTypes;    
-    NSMutableArray *results;
+    NSMutableArray *results, *periods;
     UITextField *usernameInput, *passwordInput, *accountInput;
     IBOutlet UIButton *loginButton;
     UIPickerView *accountPicker;
@@ -16,6 +16,7 @@
 
 @property (nonatomic, retain) NSArray *accountTypes;
 @property (nonatomic, retain) NSMutableArray *results;
+@property (nonatomic, retain) NSMutableArray *periods;
 @property (nonatomic, retain) UITextField *usernameInput;
 @property (nonatomic, retain) UITextField *passwordInput;
 @property (nonatomic, retain) UITextField *accountInput;

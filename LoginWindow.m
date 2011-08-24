@@ -1,15 +1,18 @@
 #import "LoginWindow.h"
 #import "Result.h"
+#import "TabbarController.h"
 
 @implementation LoginWindow
 
-@synthesize accountTypes, accountInput, accountPicker, usernameInput, passwordInput, loginButton, url, app, results;
+@synthesize accountTypes, accountInput, accountPicker, usernameInput, passwordInput, loginButton, url, app, results, periods, currentPeriod;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.app = (FontysAppAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    periods = [[NSMutableArray alloc] init];
     
     self.accountTypes = [[NSArray alloc] initWithObjects:@"Student", @"Alumnus", @"Employee", @"Relation", nil];
     
@@ -50,8 +53,7 @@
         [self.usernameInput setPlaceholder:@"PCN-Number"];
         [self.usernameInput setKeyboardType:UIKeyboardTypeNumberPad];
         [self.usernameInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-        
-        
+                
         [cell addSubview:self.usernameInput];
     }
     else if([indexPath row] == 1)
@@ -97,7 +99,8 @@
 }
 
 - (IBAction)doLogin:(id)sender
-{    
+{
+    NSLog(@"Starting authentication");
     NSURL *URL = [NSURL URLWithString:url];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL
                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -155,6 +158,10 @@
     {
         NSLog(@"Login Succesfull, getting XML feed");
         [self parseXML];
+        
+        TabbarController *tabbar = [[TabbarController alloc] initWithNibName:@"TabbarController" bundle:nil];
+        
+        [self presentModalViewController:tabbar animated:YES];
     }
 }
 
@@ -201,10 +208,10 @@
     
     if([elementName isEqualToString:@"table1_periodeNaam"])
     {
-        [self describeDictionary:attributeDict];
         Period *period = [[Period alloc] init];
         period.description = [attributeDict objectForKey:@"Textbox25"];
         currentPeriod = period;
+        results = [[NSMutableArray alloc] init];
     }
     
     if([elementName isEqualToString:@"Detail"])
@@ -222,13 +229,29 @@
         result.B3 = [attributeDict objectForKey:@"B3"];
         result.B4 = [attributeDict objectForKey:@"B4"];
         result.B5 = [attributeDict objectForKey:@"B5"];
-        
+        [results addObject:result];
         [result release];
     }
 }
 
 - (void) parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    if([elementName isEqualToString:@"table1_periodeNaam"])
+    {
+        currentPeriod.results = results;
+        [periods addObject:currentPeriod];
+    }
+    if([elementName isEqualToString:@"Report"])
+    {
+        app.report.periods = [[NSArray alloc] initWithArray:periods];
+        NSLog(@"parsed %d periods", [app.report.periods count]);
+        NSInteger resultcount = 0;
+        for(Period *p in app.report.periods)
+        {
+            resultcount += [p.results count];
+        }
+        NSLog(@"parsed %d results", resultcount);
+    }
 }
 
 - (void)describeDictionary:(NSDictionary *)dict
@@ -251,6 +274,8 @@
 {
     [accountTypes release];
     [results release];
+    [periods release];
+    [currentPeriod release];
     [accountInput release];
     [accountPicker release];
     [usernameInput release];

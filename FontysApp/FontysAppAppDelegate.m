@@ -10,7 +10,7 @@
 {
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    report = [[Student alloc] init];
+    report = [[Report alloc] init];
     return YES;
 }
 
