@@ -1,6 +1,7 @@
 #import "ResultsView.h"
 #import "Period.h"
 #import "Result.h"
+#import "LoginWindow.h"
 
 @implementation ResultsView
 
@@ -42,8 +43,9 @@
     
     Result *currentResult = [((Period*)[app.report.periods objectAtIndex:[indexPath section]]).results objectAtIndex:[indexPath row]];
     
-    cell.textLabel.text = currentResult.course;
-    cell.detailTextLabel.text = currentResult.description;
+    [cell.textLabel setText:currentResult.course];
+    [cell.detailTextLabel setText:currentResult.description];
+    [cell.imageView setImage:[UIImage imageNamed:@"c.png"]];
     
    
     //Result label
@@ -56,7 +58,6 @@
     
     
     Boolean *sufficient = [currentResult isSufficient];
-    
     
     if(sufficient != nil) {
         if(sufficient) {
@@ -77,11 +78,11 @@
     } else {
         // Niet beoordeeld
         cell.textLabel.textColor = [UIColor grayColor]; 
-        cell.detailTextLabel.textColor = [UIColor lightGrayColor]; 
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+        [cell.imageView setImage:nil];
+        cell.indentationWidth = 43;
+        cell.indentationLevel = 1;
     }
-    
-    cell.indentationWidth = 32;
-    cell.indentationLevel = 1;
     
     return cell;
 }
@@ -91,14 +92,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)dealloc

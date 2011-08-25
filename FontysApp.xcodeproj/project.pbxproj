@@ -12,9 +12,9 @@
 		4214A3F8140392A40030E066 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A3F7140392A40030E066 /* Student.m */; };
 		4214A3FC140392C10030E066 /* Period.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A3FB140392C10030E066 /* Period.m */; };
 		4214A3FF140392CB0030E066 /* Result.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A3FE140392CB0030E066 /* Result.m */; };
-		4214A4081403B16A0030E066 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 4214A4071403B16A0030E066 /* test.m */; };
 		421FDE0F14016D3700571393 /* LoginWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 421FDE0D14016D3700571393 /* LoginWindow.m */; };
 		421FDE1014016D3700571393 /* LoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421FDE0E14016D3700571393 /* LoginWindow.xib */; };
+		42726C741406DAC3000B3F05 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42726C731406DAC3000B3F05 /* MainWindow.xib */; };
 		428D01C41403DC400025D2B2 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 428D01C31403DC400025D2B2 /* Report.m */; };
 		42A58E3913F2A290002D8DD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3813F2A290002D8DD8 /* UIKit.framework */; };
 		42A58E3B13F2A290002D8DD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A58E3A13F2A290002D8DD8 /* Foundation.framework */; };
@@ -22,7 +22,6 @@
 		42A58E4313F2A290002D8DD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E4113F2A290002D8DD8 /* InfoPlist.strings */; };
 		42A58E4513F2A290002D8DD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4413F2A290002D8DD8 /* main.m */; };
 		42A58E4913F2A290002D8DD8 /* FontysAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */; };
-		42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E4A13F2A290002D8DD8 /* MainWindow.xib */; };
 		42ACABFA1406894E00F32A71 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = 42ACABF71406894E00F32A71 /* c.png */; };
 		42ACABFB1406894E00F32A71 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 42ACABF81406894E00F32A71 /* o.png */; };
 		42ACABFC1406894E00F32A71 /* v.png in Resources */ = {isa = PBXBuildFile; fileRef = 42ACABF91406894E00F32A71 /* v.png */; };
@@ -39,11 +38,10 @@
 		4214A3FB140392C10030E066 /* Period.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Period.m; sourceTree = "<group>"; };
 		4214A3FD140392CB0030E066 /* Result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
 		4214A3FE140392CB0030E066 /* Result.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Result.m; sourceTree = "<group>"; };
-		4214A4061403B16A0030E066 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
-		4214A4071403B16A0030E066 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		421FDE0C14016D3700571393 /* LoginWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginWindow.h; path = ../LoginWindow.h; sourceTree = "<group>"; };
 		421FDE0D14016D3700571393 /* LoginWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginWindow.m; path = ../LoginWindow.m; sourceTree = "<group>"; };
 		421FDE0E14016D3700571393 /* LoginWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginWindow.xib; path = ../LoginWindow.xib; sourceTree = "<group>"; };
+		42726C731406DAC3000B3F05 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		428D01C21403DC400025D2B2 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
 		428D01C31403DC400025D2B2 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		42A58E3413F2A290002D8DD8 /* FontysApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontysApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +54,6 @@
 		42A58E4613F2A290002D8DD8 /* FontysApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FontysApp-Prefix.pch"; sourceTree = "<group>"; };
 		42A58E4713F2A290002D8DD8 /* FontysAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontysAppAppDelegate.h; sourceTree = "<group>"; };
 		42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontysAppAppDelegate.m; sourceTree = "<group>"; };
-		42A58E4B13F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		42ACABF71406894E00F32A71 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
 		42ACABF81406894E00F32A71 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
 		42ACABF91406894E00F32A71 /* v.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v.png; sourceTree = "<group>"; };
@@ -109,7 +106,7 @@
 			children = (
 				42A58E4713F2A290002D8DD8 /* FontysAppAppDelegate.h */,
 				42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */,
-				42A58E4A13F2A290002D8DD8 /* MainWindow.xib */,
+				42726C731406DAC3000B3F05 /* MainWindow.xib */,
 				421FDE0C14016D3700571393 /* LoginWindow.h */,
 				421FDE0D14016D3700571393 /* LoginWindow.m */,
 				421FDE0E14016D3700571393 /* LoginWindow.xib */,
@@ -120,8 +117,6 @@
 				428D01C31403DC400025D2B2 /* Report.m */,
 				4214A3F6140392A30030E066 /* Student.h */,
 				4214A3F7140392A40030E066 /* Student.m */,
-				4214A4061403B16A0030E066 /* test.h */,
-				4214A4071403B16A0030E066 /* test.m */,
 				4214A3FA140392C10030E066 /* Period.h */,
 				4214A3FB140392C10030E066 /* Period.m */,
 				4214A3FD140392CB0030E066 /* Result.h */,
@@ -198,13 +193,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				42A58E4313F2A290002D8DD8 /* InfoPlist.strings in Resources */,
-				42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */,
 				421FDE1014016D3700571393 /* LoginWindow.xib in Resources */,
 				42148277140580F0008672AB /* ResultsView.xib in Resources */,
 				42ACABFA1406894E00F32A71 /* c.png in Resources */,
 				42ACABFB1406894E00F32A71 /* o.png in Resources */,
 				42ACABFC1406894E00F32A71 /* v.png in Resources */,
 				42ACABFE140689D900F32A71 /* g.png in Resources */,
+				42726C741406DAC3000B3F05 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +216,6 @@
 				4214A3F8140392A40030E066 /* Student.m in Sources */,
 				4214A3FC140392C10030E066 /* Period.m in Sources */,
 				4214A3FF140392CB0030E066 /* Result.m in Sources */,
-				4214A4081403B16A0030E066 /* test.m in Sources */,
 				428D01C41403DC400025D2B2 /* Report.m in Sources */,
 				42148276140580F0008672AB /* ResultsView.m in Sources */,
 			);
@@ -236,14 +230,6 @@
 				42A58E4213F2A290002D8DD8 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		42A58E4A13F2A290002D8DD8 /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42A58E4B13F2A290002D8DD8 /* en */,
-			);
-			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

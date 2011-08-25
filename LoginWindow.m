@@ -219,7 +219,11 @@
         Result *result = [[Result alloc] init];
         result.course = [attributeDict objectForKey:@"vakNaam"];
         result.description = [attributeDict objectForKey:@"beschrijving"];
-        result.result = [attributeDict objectForKey:@"resultaat"];
+        double r = [[attributeDict objectForKey:@"resultaat"] doubleValue];
+        if(r == 0 || r <= 10)
+            result.result = [attributeDict objectForKey:@"resultaat"];
+        else
+            result.result = [[NSString stringWithFormat:@"%f", r/10] substringToIndex:3];
         result.SBU = [[attributeDict objectForKey:@"SBU"] intValue];
         result.comment = [attributeDict objectForKey:@"Opmerking"];
         result.A1 = [attributeDict objectForKey:@"A1"];
@@ -240,7 +244,7 @@
     if([elementName isEqualToString:@"table1_periodeNaam"])
     {
         currentPeriod.results = results;
-        [periods addObject:currentPeriod];
+        [periods insertObject:currentPeriod atIndex:0];
     }
     if([elementName isEqualToString:@"Report"])
     {
