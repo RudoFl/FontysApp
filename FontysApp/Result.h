@@ -20,4 +20,6 @@
 @property (nonatomic, retain) NSString *B5;
 @property (nonatomic, assign) NSInteger SBU;
 
+@property (nonatomic, assign) Boolean isSufficient;
+
 @end

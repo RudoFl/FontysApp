@@ -21,4 +21,40 @@
     [super dealloc];
 }
 
+- isSufficient
+{
+    if([[self.result lowercaseString] isEqualToString:@"g"] || [[self.result lowercaseString] isEqualToString:@"v"])
+    {
+        return YES;
+    }
+    else if([self.result lowercaseString] == @"o")
+    {
+        return NO;
+    }
+    else
+    {
+        int resultint = [self.result intValue];
+        double resultdouble = (double)resultint;
+        
+        if(resultint > 10)
+        {
+            resultdouble = resultint / 10;
+        }
+        else
+        {
+            resultdouble = resultint;
+        }
+        
+        if (resultdouble > 5.5) {
+            return YES;
+        }
+        else if (resultdouble > 0)
+        {
+            return NO;
+        }
+
+    }
+        return nil;
+}
+
 @end

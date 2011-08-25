@@ -38,46 +38,54 @@
     static NSString *CellIdentifier = @"ResultsCell";
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     Result *currentResult = [((Period*)[app.report.periods objectAtIndex:[indexPath section]]).results objectAtIndex:[indexPath row]];
     
-    [cell.textLabel setText:currentResult.course];
-    [cell.detailTextLabel setText:currentResult.description];
+    cell.textLabel.text = currentResult.course;
+    cell.detailTextLabel.text = currentResult.description;
     
-    if([[currentResult.result lowercaseString] isEqualToString:@"g"])
-    {
-        [cell.imageView setImage:[UIImage imageNamed:@"g.png"]];
-    } else if([[currentResult.result lowercaseString] isEqualToString:@"v"])
-    {
-        [cell.imageView setImage:[UIImage imageNamed:@"v.png"]];
-    } else if([[currentResult.result lowercaseString] isEqualToString:@"o"])
-    {
-        [cell.imageView setImage:[UIImage imageNamed:@"o.png"]];
-    } else 
-    {   
-        [cell.imageView setImage:[UIImage imageNamed:@"c.png"]];
-        UILabel *resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 40, 40)];
-        [resultLabel setTextAlignment:UITextAlignmentCenter];
-        [resultLabel setFont:[UIFont fontWithName:@"Arial" size:24]];
-        
-        int resultint = [currentResult.result intValue];
-        double resultdouble = [currentResult.result doubleValue];
-        if(resultint > 10)
-        {
-            resultdouble = resultint / 10;
-            [resultLabel setText:[[NSString stringWithFormat:@"%f", resultdouble] substringToIndex:3]];
+   
+    //Result label
+    UILabel *resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 40, 40)];
+    resultLabel.textAlignment = UITextAlignmentCenter;
+    resultLabel.font = [UIFont systemFontOfSize:24];
+    resultLabel.text = [currentResult result];
+    [resultLabel setBackgroundColor:[UIColor clearColor]];
+    [cell addSubview:resultLabel];
+    
+    
+    Boolean *sufficient = [currentResult isSufficient];
+    
+    
+    if(sufficient != nil) {
+        if(sufficient) {
+            // Voldoende
+            cell.textLabel.textColor = [UIColor blackColor];
+            cell.detailTextLabel.textColor = [UIColor grayColor];
+            resultLabel.textColor = [UIColor colorWithRed:.4 green:.8 blue:0 alpha:1];
         }
         else
         {
-            if (resultint != 0)
-                [resultLabel setText:[NSString stringWithFormat:@"%d", resultint]];
+            // Onvoldoende
+            UIColor *red = [UIColor colorWithRed:1 green:.2 blue:0 alpha:1];
+            
+            cell.textLabel.textColor = red;
+            cell.detailTextLabel.textColor = red; 
+            resultLabel.textColor = red;
         }
-        [resultLabel setBackgroundColor:[UIColor clearColor]];
-        [cell addSubview:resultLabel];
+    } else {
+        // Niet beoordeeld
+        cell.textLabel.textColor = [UIColor grayColor]; 
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor]; 
     }
+    
+    cell.indentationWidth = 32;
+    cell.indentationLevel = 1;
     
     return cell;
 }
+
 
 #pragma mark - Table view delegate
 
