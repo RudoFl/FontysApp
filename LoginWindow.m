@@ -54,6 +54,7 @@
         [self.usernameInput setKeyboardType:UIKeyboardTypeNumberPad];
         [self.usernameInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         
+        [self.usernameInput setText:@"221882"];
         
         [cell addSubview:self.usernameInput];
     }
@@ -64,6 +65,7 @@
         [self.passwordInput setPlaceholder:@"Password"];
         [self.passwordInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         
+        [self.passwordInput setText:@"hp-Rudi_4965"];
         
         [cell addSubview:self.passwordInput];
     }

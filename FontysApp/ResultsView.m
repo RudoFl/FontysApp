@@ -37,68 +37,44 @@
 {
     static NSString *CellIdentifier = @"ResultsCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if(cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    /*Result *currentResult = [[((Period*)[app.report.periods objectAtIndex:[indexPath section]]).results objectAtIndex:[indexPath row]] autorelease];
-    
-    [cell.textLabel setText:currentResult.course];
-    [cell.detailTextLabel setText:currentResult.description];*/
-    
-    UILabel *resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 40, 40)];
-    [resultLabel setFont:[UIFont fontWithName:@"Helvetica" size:30]];
-    [resultLabel setTextAlignment:UITextAlignmentCenter];
-    [cell addSubview:resultLabel];
-    
-    UILabel *courseLabel = [[UILabel alloc] initWithFrame:CGRectMake(44, 2, 276, 21)];
-    [courseLabel setFont:[UIFont fontWithName:@"Helvetica" size:17]];
-    [cell addSubview:courseLabel];
-    
-    UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(44, 23, 276, 21)];
-    [descriptionLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
-    [cell addSubview:descriptionLabel];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     
     Result *currentResult = [((Period*)[app.report.periods objectAtIndex:[indexPath section]]).results objectAtIndex:[indexPath row]];
     
-    if([[currentResult.result lowercaseString] isEqualToString:@"g"] || [[currentResult.result lowercaseString] isEqualToString:@"v"])
+    [cell.textLabel setText:currentResult.course];
+    [cell.detailTextLabel setText:currentResult.description];
+    
+    if([[currentResult.result lowercaseString] isEqualToString:@"g"])
     {
-        // Voldoende of goed
-        [resultLabel setTextColor:[UIColor greenColor]];
-        [resultLabel setText:[currentResult.result uppercaseString]];
+        [cell.imageView setImage:[UIImage imageNamed:@"g.png"]];
+    } else if([[currentResult.result lowercaseString] isEqualToString:@"v"])
+    {
+        [cell.imageView setImage:[UIImage imageNamed:@"v.png"]];
     } else if([[currentResult.result lowercaseString] isEqualToString:@"o"])
     {
-        // Onvoldoende
-        [resultLabel setText:@"O"];
-        [resultLabel setTextColor:[UIColor redColor]];
-        [descriptionLabel setTextColor:[UIColor redColor]];
-        [courseLabel setTextColor:[UIColor redColor]];
-        
-    } else if([[currentResult.result lowercaseString] isEqualToString:@""])
-    {
-        // Nog geen resultaat
+        [cell.imageView setImage:[UIImage imageNamed:@"o.png"]];
     } else 
-    {
-        // Punt is een getal
-        double result = [currentResult.result doubleValue];
-        if (result < 5.5)
+    {   
+        [cell.imageView setImage:[UIImage imageNamed:@"c.png"]];
+        UILabel *resultLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 40, 40)];
+        [resultLabel setTextAlignment:UITextAlignmentCenter];
+        [resultLabel setFont:[UIFont fontWithName:@"Arial" size:24]];
+        
+        int resultint = [currentResult.result intValue];
+        double resultdouble = [currentResult.result doubleValue];
+        if(resultint > 10)
         {
-            [resultLabel setTextColor:[UIColor redColor]];
-            [descriptionLabel setTextColor:[UIColor redColor]];
-            [courseLabel setTextColor:[UIColor redColor]];
+            resultdouble = resultint / 10;
+            [resultLabel setText:[[NSString stringWithFormat:@"%f", resultdouble] substringToIndex:3]];
         }
         else
         {
-            [resultLabel setTextColor:[UIColor greenColor]];
+            if (resultint != 0)
+                [resultLabel setText:[NSString stringWithFormat:@"%d", resultint]];
         }
-        [resultLabel setText:[NSString stringWithFormat:@"%d", result]];
+        [resultLabel setBackgroundColor:[UIColor clearColor]];
+        [cell addSubview:resultLabel];
     }
-    [courseLabel setFont:cell.textLabel.font];
-    [courseLabel setText:currentResult.course];
-    [descriptionLabel setFont:cell.detailTextLabel.font];
-    [descriptionLabel setText:currentResult.description];
     
     return cell;
 }

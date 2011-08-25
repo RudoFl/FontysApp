@@ -23,6 +23,10 @@
 		42A58E4513F2A290002D8DD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4413F2A290002D8DD8 /* main.m */; };
 		42A58E4913F2A290002D8DD8 /* FontysAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */; };
 		42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A58E4A13F2A290002D8DD8 /* MainWindow.xib */; };
+		42ACABFA1406894E00F32A71 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = 42ACABF71406894E00F32A71 /* c.png */; };
+		42ACABFB1406894E00F32A71 /* o.png in Resources */ = {isa = PBXBuildFile; fileRef = 42ACABF81406894E00F32A71 /* o.png */; };
+		42ACABFC1406894E00F32A71 /* v.png in Resources */ = {isa = PBXBuildFile; fileRef = 42ACABF91406894E00F32A71 /* v.png */; };
+		42ACABFE140689D900F32A71 /* g.png in Resources */ = {isa = PBXBuildFile; fileRef = 42ACABFD140689D900F32A71 /* g.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		42A58E4713F2A290002D8DD8 /* FontysAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontysAppAppDelegate.h; sourceTree = "<group>"; };
 		42A58E4813F2A290002D8DD8 /* FontysAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontysAppAppDelegate.m; sourceTree = "<group>"; };
 		42A58E4B13F2A290002D8DD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		42ACABF71406894E00F32A71 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
+		42ACABF81406894E00F32A71 /* o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = o.png; sourceTree = "<group>"; };
+		42ACABF91406894E00F32A71 /* v.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v.png; sourceTree = "<group>"; };
+		42ACABFD140689D900F32A71 /* g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = g.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,10 @@
 				4214A3FB140392C10030E066 /* Period.m */,
 				4214A3FD140392CB0030E066 /* Result.h */,
 				4214A3FE140392CB0030E066 /* Result.m */,
+				42ACABF71406894E00F32A71 /* c.png */,
+				42ACABFD140689D900F32A71 /* g.png */,
+				42ACABF81406894E00F32A71 /* o.png */,
+				42ACABF91406894E00F32A71 /* v.png */,
 				42A58E3F13F2A290002D8DD8 /* Supporting Files */,
 			);
 			path = FontysApp;
@@ -189,6 +201,10 @@
 				42A58E4C13F2A290002D8DD8 /* MainWindow.xib in Resources */,
 				421FDE1014016D3700571393 /* LoginWindow.xib in Resources */,
 				42148277140580F0008672AB /* ResultsView.xib in Resources */,
+				42ACABFA1406894E00F32A71 /* c.png in Resources */,
+				42ACABFB1406894E00F32A71 /* o.png in Resources */,
+				42ACABFC1406894E00F32A71 /* v.png in Resources */,
+				42ACABFE140689D900F32A71 /* g.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
