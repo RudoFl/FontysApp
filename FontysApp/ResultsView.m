@@ -61,26 +61,38 @@
     [descriptionLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
     [cell addSubview:descriptionLabel];
     
-    Result *currentResult = [[((Period*)[app.report.periods objectAtIndex:[indexPath section]]).results objectAtIndex:[indexPath row]] autorelease];
-    if([[currentResult.result lowercaseString] isEqualToString:@"g"])
+    Result *currentResult = [((Period*)[app.report.periods objectAtIndex:[indexPath section]]).results objectAtIndex:[indexPath row]];
+    
+    if([[currentResult.result lowercaseString] isEqualToString:@"g"] || [[currentResult.result lowercaseString] isEqualToString:@"v"])
     {
+        // Voldoende of goed
         [resultLabel setTextColor:[UIColor greenColor]];
-        [resultLabel setText:@"G"];
-    } else if([[currentResult.result lowercaseString] isEqualToString:@"v"])
-    {
-        [resultLabel setTextColor:[UIColor greenColor]];
-        [resultLabel setText:@"V"];
+        [resultLabel setText:[currentResult.result uppercaseString]];
     } else if([[currentResult.result lowercaseString] isEqualToString:@"o"])
     {
-        [resultLabel setTextColor:[UIColor redColor]];
+        // Onvoldoende
         [resultLabel setText:@"O"];
-    } else
+        [resultLabel setTextColor:[UIColor redColor]];
+        [descriptionLabel setTextColor:[UIColor redColor]];
+        [courseLabel setTextColor:[UIColor redColor]];
+        
+    } else if([[currentResult.result lowercaseString] isEqualToString:@""])
     {
+        // Nog geen resultaat
+    } else 
+    {
+        // Punt is een getal
         double result = [currentResult.result doubleValue];
         if (result < 5.5)
+        {
             [resultLabel setTextColor:[UIColor redColor]];
+            [descriptionLabel setTextColor:[UIColor redColor]];
+            [courseLabel setTextColor:[UIColor redColor]];
+        }
         else
+        {
             [resultLabel setTextColor:[UIColor greenColor]];
+        }
         [resultLabel setText:[NSString stringWithFormat:@"%d", result]];
     }
     [courseLabel setFont:cell.textLabel.font];
