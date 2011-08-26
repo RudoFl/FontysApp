@@ -55,9 +55,6 @@
         [self.usernameInput setPlaceholder:@"PCN-Number"];
         [self.usernameInput setKeyboardType:UIKeyboardTypeNumberPad];
         [self.usernameInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-        
-        [self.usernameInput setText:@"221882"];
-        
         [cell addSubview:self.usernameInput];
     }
     else if([indexPath row] == 1)
@@ -66,9 +63,6 @@
         [self.passwordInput setSecureTextEntry:YES];
         [self.passwordInput setPlaceholder:@"Password"];
         [self.passwordInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
-        
-        [self.passwordInput setText:@"hp-Rudi_4965"];
-        
         [cell addSubview:self.passwordInput];
     }
     else
