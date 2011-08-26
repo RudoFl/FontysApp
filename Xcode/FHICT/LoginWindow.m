@@ -48,28 +48,32 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    CGRect cellContentRect = CGRectMake(15, 0, cell.frame.size.width - 30, cell.frame.size.height);
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
     if([indexPath row] == 0)
     {
-        self.usernameInput = [[UITextField alloc] initWithFrame:cellContentRect];
-        [self.usernameInput setPlaceholder:@"PCN-Number"];
+        [cell.textLabel setText:@"PCN"];
+        self.usernameInput = [[UITextField alloc] initWithFrame:CGRectMake(130, 0, 180, 44)];
         [self.usernameInput setKeyboardType:UIKeyboardTypeNumberPad];
         [self.usernameInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+        [self.usernameInput setText:[prefs objectForKey:@"username"]];
         [cell addSubview:self.usernameInput];
     }
     else if([indexPath row] == 1)
     {
-        self.passwordInput = [[UITextField alloc] initWithFrame:cellContentRect];
+        [cell.textLabel setText:@"Wachtwoord"];
+        self.passwordInput = [[UITextField alloc] initWithFrame:CGRectMake(130, 0, 180, 44)];
         [self.passwordInput setSecureTextEntry:YES];
-        [self.passwordInput setPlaceholder:@"Password"];
         [self.passwordInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
+        [self.passwordInput setText:[prefs objectForKey:@"password"]];
         [cell addSubview:self.passwordInput];
     }
     else
     {
-        self.accountInput = [[UITextField alloc] initWithFrame:cellContentRect];
-        [self.accountInput setPlaceholder:@"Accounttype"];
-        [self.accountInput setText:@"Student"];
+        [cell.textLabel setText:@"Type"];
+        self.accountInput = [[UITextField alloc] initWithFrame:CGRectMake(130, 0, 180, 44)];
+        [self.accountInput setText:[prefs objectForKey:@"accounttype"]];
         self.accountInput.inputView = accountPicker;
         [self.accountInput setContentVerticalAlignment:UIControlContentVerticalAlignmentCenter];
         [cell addSubview:self.accountInput];
@@ -99,6 +103,9 @@
 
 - (IBAction)doLogin:(id)sender
 {
+    [usernameInput resignFirstResponder];
+    [passwordInput resignFirstResponder];
+    [accountInput resignFirstResponder];
     NSLog(@"Starting authentication");
     NSURL *URL = [NSURL URLWithString:url];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL
@@ -145,12 +152,17 @@
                                                      otherButtonTitles:nil];
         [failureAlert show];
         [failureAlert release];
+        [connection cancel];
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     if(authSucces)
     {
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:[usernameInput text] forKey:@"username"];
+        [prefs setObject:[accountInput text] forKey:@"accounttype"];
+        [prefs synchronize];
         [self parseXML];
         [app loginComplete];
     }
@@ -163,6 +175,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"connectionerror");
 }
 
 - (void)parseXML
